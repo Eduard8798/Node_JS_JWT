@@ -11,6 +11,7 @@ import Eror404page from "./pages/Eror404page";
 import {PageContextProvider} from "./context/PageContext";
 import CarVendorsPage from "./pages/CarVendorsPage";
 import {CarsContextProvider} from "./context/CarsContext";
+import CarsPage from "./context/CarsPage";
 
 
 
@@ -49,6 +50,10 @@ function App() {
 
                         <Route path="cars" element={<Suspense fallback={<div>Loading...</div>}>
                             <CarsContextProvider> <CarVendorsPage/> </CarsContextProvider>
+                        </Suspense>
+                    } />
+                        <Route path="cars/:seo_text/:car_slug" element={<Suspense fallback={<div>Loading...</div>}>
+                            <CarsContextProvider> <CarsPage/></CarsContextProvider>
                         </Suspense>
                     } />
 

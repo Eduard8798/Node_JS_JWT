@@ -15,7 +15,8 @@ export default function CarsPage  () {
             <ul>
                 {cars.map(car=>(
                     <li key={car.slug}>
-                        <Link to={`/cars/some-seo-text/${car.slug}`}>{car.name}</Link>
+                        <Link to={`/cars/some-seo-text/${car.slug}`}>
+                            {car.name}</Link>
                     </li>
                 ))}
 
