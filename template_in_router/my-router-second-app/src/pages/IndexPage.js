@@ -1,6 +1,11 @@
+import {usePageContext} from "../context/PageContext";
 
 
-export default function IndexPage () {
+export default function IndexPage (props) {
+    props.setByPropsPageName  ('Index')
+
+    const {setByContextPageName} = usePageContext();
+    setByContextPageName ('Home by Context from Components')
 
     return  (
 

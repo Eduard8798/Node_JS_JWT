@@ -1,7 +1,11 @@
 import ipad from './../assets/img/ipad.png'
+import {usePageContext} from "../context/PageContext";
 
-export default function AboutPage () {
+export default function AboutPage (props) {
 
+props.setByPropsPageName  ('About')
+    const {setByContextPageName} = usePageContext();
+setByContextPageName ('About by Context from Components')
     return  (
 
             <section className="about-section text-center" id="about">

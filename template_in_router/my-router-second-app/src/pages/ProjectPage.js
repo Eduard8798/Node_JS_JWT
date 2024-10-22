@@ -1,9 +1,15 @@
 import bgmaster from '../assets/img/bg-masthead.jpg'
 import demo from '../assets/img/demo-image-01.jpg'
 import demoImg2 from '../assets/img/demo-image-02.jpg'
+import {usePageContext} from "../context/PageContext";
 
 
-export default function ProjectPage () {
+export default function ProjectPage (props) {
+
+    props.setByPropsPageName ('Projects')
+
+    const {setByContextPageName} = usePageContext();
+    setByContextPageName ('Projects by Context from Components')
 
     return  (
 

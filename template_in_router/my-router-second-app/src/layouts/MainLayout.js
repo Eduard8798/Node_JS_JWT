@@ -2,21 +2,18 @@ import MyHeader from "./MyHeader";
 import {Outlet} from "react-router-dom";
 import MyContact from "./MyContact";
 import MyFooter from "./MyFooter";
-import IndexPage from "../pages/IndexPage";
 
 
-export default function MainLayout () {
 
-    return  (
+export default function MainLayout (props) {
+
+    return(
         <>
-       <MyHeader/>
+            <MyHeader byPropsPageName = {props.byPropsPageName} />
+            <Outlet />
+            <MyContact />
 
-
-        <Outlet/>
-
-        <MyContact/>
-
-            <MyFooter/>
-            </>
+            <MyFooter />
+        </>
     )
 }

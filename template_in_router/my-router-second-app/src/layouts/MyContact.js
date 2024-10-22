@@ -5,9 +5,10 @@ import MyMenu from "./MyMenu";
 
 export default function MyContact () {
 
+
+
     return  (
         <>
-            <MyMenu/>
 
             <section className="contact-section bg-black">
                 <div className="container px-4 px-lg-5">
