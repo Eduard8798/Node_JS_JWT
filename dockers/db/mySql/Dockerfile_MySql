@@ -1,0 +1,11 @@
+# Используем официальный образ MySQL
+FROM mysql:latest
+
+# Устанавливаем переменные окружения для MySQL
+ENV MYSQL_ROOT_PASSWORD=root
+ENV MYSQL_DATABASE=testdb
+ENV MYSQL_USER=user
+ENV MYSQL_PASSWORD=password
+
+# Открываем порт для подключения к MySQL
+EXPOSE 3306
