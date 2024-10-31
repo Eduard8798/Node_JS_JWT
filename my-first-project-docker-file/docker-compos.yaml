@@ -1,0 +1,26 @@
+version: '3.1'
+
+services:
+
+  pv321.api_jwt-create:
+    build:
+      context: ./back/jwt-create
+      dockerfile: ./Dockerfile
+    ports:
+      - '3939:3030'
+
+  pv321.api_jwt-verify:
+    build:
+      context: ./back/jwt-verify
+      dockerfile: ./Dockerfile
+    ports:
+      - '3434:3030'
+
+
+
+  pv321.front.public:
+    build:
+      context: ./front/public
+      dockerfile: ./Dockerfile
+    ports:
+      - '3000:3000'
