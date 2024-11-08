@@ -1,0 +1,49 @@
+version: '3.1'
+
+services:
+
+  vp321.nginx:
+    build:
+      context: ./services/nginx
+      dockerfile: ./Dockerfile
+      #что бы внутри можно было читать , вставляем его как "флешку" volumes
+    volumes:
+      - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+      #информация для docker , какие микросервисы должны быть заупещены, что бы контейнер мог работать "depends_on"
+      #этот контейнер будет работаь в том случ , если остальные контейнеры будут работать
+    depends_on:
+      - vp321.api.csharp
+      - vp.api.express
+      - vp321.api.http
+
+
+  vp321.api.csharp:
+    build:
+      context: ./back/csharp-api
+    env_file:
+      - ./jwt.env
+    ports:
+      - "5001:5001"
+
+  vp.api.express:
+    build:
+      context: ./back/express-api
+    env_file:
+      - ./jwt.env
+    environment:
+        - SERVER_NAME=ExpressServer
+    ports:
+      - "5555:3000"
+
+  vp321.api.http:
+    build:
+      context: ./back/http-api
+    env_file:
+        - ./jwt.env
+    environment:
+      - SERVER_NAME=HttpServer
+    ports:
+      - "7777:3000"
+

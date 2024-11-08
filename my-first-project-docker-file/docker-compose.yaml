@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  vp321.nginx:
+    build:
+      context: ./services/nginx
+      dockerfile: ./Dockerfile
+      #что бы внутри можно было читать , вставляем его как "флешку" volumes
+    volumes:
+      - ./services/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "80:80"
+      #информация для docker , какие микросервисы должны быть заупещены, что бы контейнер мог работать "depends_on"
+      #этот контейнер будет работаь в том случ , если остальные контейнеры будут работать
+    depends_on:
+      - pv321.api_jwt-create
+      - pv321.api_jwt-verify
+      - pv321.front.public
+
+
+  pv321.api_jwt-create:
+      build:
+        context: ./back/jwt-create
+        dockerfile: ./Dockerfile
+      ports:
+        - '3939:3000'
+
+  pv321.api_jwt-verify:
+      build:
+        context: ./back/jwt-verify
+        dockerfile: ./Dockerfile
+      ports:
+        - '3434:3030'
+
+  pv321.front.public:
+      build:
+        context: ./front/public
+        dockerfile: ./Dockerfile
+      ports:
+        - '3000:3000'
