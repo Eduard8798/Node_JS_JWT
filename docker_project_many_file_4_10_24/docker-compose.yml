@@ -15,7 +15,7 @@ services:
       #этот контейнер будет работаь в том случ , если остальные контейнеры будут работать
     depends_on:
       - vp321.api.csharp
-      - vp.api.express
+      - vp321.api.express
       - vp321.api.http
 
 
@@ -24,18 +24,17 @@ services:
       context: ./back/csharp-api
     env_file:
       - ./jwt.env
-    ports:
-      - "5001:5001"
 
-  vp.api.express:
+
+  vp321.api.express:
     build:
       context: ./back/express-api
     env_file:
       - ./jwt.env
     environment:
         - SERVER_NAME=ExpressServer
-    ports:
-      - "5555:3000"
+        - SERVER_PORT=4000
+
 
   vp321.api.http:
     build:
@@ -44,6 +43,20 @@ services:
         - ./jwt.env
     environment:
       - SERVER_NAME=HttpServer
-    ports:
-      - "7777:3000"
+
+  vp321.api.hiload1:
+    build:
+      context: ./back/http-api
+    env_file:
+        - ./jwt.env
+    environment:
+        - SERVER_NAME=Hiload First
+
+  vp321.api.hiload2:
+    build:
+      context: ./back/http-api
+    env_file:
+      - ./jwt.env
+    environment:
+      - SERVER_NAME=Hiload Second
 

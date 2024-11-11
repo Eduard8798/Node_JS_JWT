@@ -2,7 +2,7 @@ import { createServer } from "http";
 
 const SERVER_NAME = process.env.SERVER_HOST || "http module";
 const SERVER_HOST = process.env.SERVER_HOST || "localhost";
-const SERVER_PORT = process.env.SERVER_PORT || 3000;
+const SERVER_PORT = process.env.SERVER_PORT || 3005;
 
 
 import express from 'express';

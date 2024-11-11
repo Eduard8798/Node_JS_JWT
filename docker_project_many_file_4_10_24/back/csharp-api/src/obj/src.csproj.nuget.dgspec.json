@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/macbook/PhpstormProjects/Homework_NodeJS/Node_JS_JWT/docker_project_many_file_4_10_24/back/csharp-api/src/src.csproj": {}
+  },
+  "projects": {
+    "/Users/macbook/PhpstormProjects/Homework_NodeJS/Node_JS_JWT/docker_project_many_file_4_10_24/back/csharp-api/src/src.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/macbook/PhpstormProjects/Homework_NodeJS/Node_JS_JWT/docker_project_many_file_4_10_24/back/csharp-api/src/src.csproj",
+        "projectName": "src",
+        "projectPath": "/Users/macbook/PhpstormProjects/Homework_NodeJS/Node_JS_JWT/docker_project_many_file_4_10_24/back/csharp-api/src/src.csproj",
+        "packagesPath": "/Users/macbook/.nuget/packages/",
+        "outputPath": "/Users/macbook/PhpstormProjects/Homework_NodeJS/Node_JS_JWT/docker_project_many_file_4_10_24/back/csharp-api/src/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/macbook/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
